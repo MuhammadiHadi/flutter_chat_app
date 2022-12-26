@@ -33,7 +33,7 @@ class SignupController with ChangeNotifier {
         }).then((value) {
           setLoading(false);
           Utils.toastMessage("account create successfully");
-          Navigator.pushNamed(context, 'login');
+          Navigator.pushNamed(context, '/login');
         }).onError((error, stackTrace) {
           setLoading(false);
           Utils.toastMessage(error.toString());

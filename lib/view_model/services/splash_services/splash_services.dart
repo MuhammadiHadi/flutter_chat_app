@@ -12,7 +12,7 @@ class SplashServices {
     if (user != null) {
       SessionConttroller().userId = user.uid.toString();
       Timer(Duration(seconds: 3), () {
-        Navigator.pushNamed(context, 'dashboard');
+        Navigator.pushNamed(context, '/navigation');
       });
     } else {
       Timer(Duration(seconds: 3), () {

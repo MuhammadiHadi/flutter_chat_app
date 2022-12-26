@@ -92,7 +92,7 @@ class _LoginViewState extends State<LoginView> {
                             alignment: Alignment.topRight,
                             child: InkWell(
                               onTap: () {
-                                // Navigator.pushNamed(context, 'ForgetPassword');
+                                Navigator.pushNamed(context, '/forgetPassword');
                               },
                               child: Text(
                                 "ForgetPassword",
