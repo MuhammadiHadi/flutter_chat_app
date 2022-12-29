@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_app/view/dashboard/message_view/message_view.dart';
 import 'package:flutter_chat_app/view/dashboard/user_profile/user_profile_view.dart';
+
+import '../user_list_view/user_list_view.dart';
 
 class NavigationBarView extends StatefulWidget {
   const NavigationBarView({Key? key}) : super(key: key);
@@ -11,8 +14,8 @@ class NavigationBarView extends StatefulWidget {
 class _NavigationBarViewState extends State<NavigationBarView> {
   @override
   List<Widget> Screen = [
-    Text("home"),
-    Text("home"),
+    UserList(),
+    MessageView(),
     ProfileView(),
   ];
   int currentindex = 0;
@@ -25,11 +28,11 @@ class _NavigationBarViewState extends State<NavigationBarView> {
         showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat_outlined),
+            icon: Icon(Icons.list),
             label: "chat",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list),
+            icon: Icon(Icons.chat_outlined),
             label: "chat",
           ),
           BottomNavigationBarItem(

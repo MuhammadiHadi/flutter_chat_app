@@ -45,6 +45,7 @@ dependencies:
   fluttertoast:
   provider:
   image_picker:
+  shimmer:
 
 
 dev_dependencies:

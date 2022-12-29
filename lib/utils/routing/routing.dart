@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_app/utils/route/route.dart';
+import 'package:flutter_chat_app/view/dashboard/message_view/message_view.dart';
 import 'package:flutter_chat_app/view/dashboard/navigationbar_view/navigation_bar_view.dart';
+import 'package:flutter_chat_app/view/dashboard/user_list_view/user_list_view.dart';
 import 'package:flutter_chat_app/view/forget_password/forget_password.dart';
 import 'package:flutter_chat_app/view/login_view/login_view.dart';
 import 'package:flutter_chat_app/view/signup_view/signup_view.dart';
@@ -20,6 +22,10 @@ class Routing {
         return MaterialPageRoute(builder: (_) => ForgetPassword());
       case Routes.NavigationBarView:
         return MaterialPageRoute(builder: (_) => NavigationBarView());
+      case Routes.UserListView:
+        return MaterialPageRoute(builder: (_) => UserList());
+      case Routes.MessageView:
+        return MaterialPageRoute(builder: (_) => MessageView());
       default:
         return MaterialPageRoute(builder: (_) {
           return Scaffold(

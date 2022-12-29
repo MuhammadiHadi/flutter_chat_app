@@ -8,6 +8,7 @@ import 'package:flutter_chat_app/res/comonent/main_button.dart';
 import 'package:flutter_chat_app/view_model/profile_conttroller/profile_conttroller.dart';
 import 'package:flutter_chat_app/view_model/services/session_manger/session_manger.dart';
 import 'package:provider/provider.dart';
+import 'package:shimmer/shimmer.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -33,7 +34,124 @@ class _ProfileViewState extends State<ProfileView> {
                       ref.child(SessionConttroller().userId.toString()).onValue,
                   builder: (context, AsyncSnapshot snapshot) {
                     if (!snapshot.hasData) {
-                      return Center(child: CircularProgressIndicator());
+                      return Shimmer.fromColors(
+                        baseColor: Colors.grey.shade300,
+                        highlightColor: Colors.grey.shade100,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              height: height * .05,
+                            ),
+                            Stack(
+                              alignment: Alignment.bottomCenter,
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 9),
+                                  child: Center(
+                                    // image container
+                                    child: Container(
+                                        height: 130,
+                                        width: 130,
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey,
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                              color: Colors.grey,
+                                            )),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                        )),
+                                  ),
+                                ),
+                                CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  radius: 10,
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 40,
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Column(
+                                children: [
+                                  ListTile(
+                                    title: Container(
+                                      height: 30,
+                                      width: 300,
+                                      color: Colors.white,
+                                    ),
+                                    leading: Container(
+                                      height: 50,
+                                      width: 50,
+                                      color: Colors.white,
+                                    ),
+                                    subtitle: Container(
+                                      height: 20,
+                                      width: 300,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  ListTile(
+                                    title: Container(
+                                      height: 30,
+                                      width: 300,
+                                      color: Colors.white,
+                                    ),
+                                    leading: Container(
+                                      height: 50,
+                                      width: 50,
+                                      color: Colors.white,
+                                    ),
+                                    subtitle: Container(
+                                      height: 20,
+                                      width: 300,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  ListTile(
+                                    title: Container(
+                                      height: 30,
+                                      width: 300,
+                                      color: Colors.white,
+                                    ),
+                                    leading: Container(
+                                      height: 50,
+                                      width: 50,
+                                      color: Colors.white,
+                                    ),
+                                    subtitle: Container(
+                                      height: 20,
+                                      width: 300,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 50,
+                                  ),
+                                  Container(
+                                    height: 50,
+                                    width: double.infinity,
+                                    color: Colors.white,
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      );
                     } else if (snapshot.hasData) {
                       Map<dynamic, dynamic> map = snapshot.data.snapshot.value;
                       return SingleChildScrollView(
