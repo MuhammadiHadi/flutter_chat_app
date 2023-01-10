@@ -271,6 +271,8 @@ class _ProfileViewState extends State<ProfileView> {
                                     height: 30,
                                   ),
                                   MainButton(
+                                    boador: 0.0,
+                                    borderColor: AppColor.greenboarder,
                                     title: "LOGOUT",
                                     color: AppColor.green,
                                     textcolor: AppColor.white,

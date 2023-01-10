@@ -74,6 +74,8 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                   child: Consumer<ForgetPasswordConttroller>(
                     builder: (context, provider, child) {
                       return MainButton(
+                        boador: 0.0,
+                        borderColor: AppColor.greenboarder,
                         title: "RESET",
                         color: AppColor.green,
                         textcolor: AppColor.white,

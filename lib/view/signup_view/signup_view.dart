@@ -34,8 +34,6 @@ class _SignUpViewState extends State<SignUpView> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height * 1;
-    String? fonteight;
-    String fontsize;
 
     final style = TextStyle(
       fontWeight: FontWeight.w900,
@@ -54,20 +52,20 @@ class _SignUpViewState extends State<SignUpView> {
                   return SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(top: 70),
                           child: Text(
-                            "Welcome to Messaging",
+                            "Welcome!",
                             style: style,
                           ),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 5,
                         ),
                         Text(
-                          "Enter your email address\n to register your account",
+                          "Create Account to Continue",
                           textAlign: TextAlign.center,
                         ),
                         SizedBox(
@@ -123,6 +121,8 @@ class _SignUpViewState extends State<SignUpView> {
                                   height: height * 0.05,
                                 ),
                                 MainButton(
+                                  boador: 0.0,
+                                  borderColor: AppColor.greenboarder,
                                   title: "LOGIN",
                                   color: AppColor.green,
                                   textcolor: AppColor.white,
@@ -146,16 +146,20 @@ class _SignUpViewState extends State<SignUpView> {
                           onTap: () {
                             Navigator.pushNamed(context, '/login');
                           },
-                          child: Text.rich(
-                            TextSpan(
-                                text: "Already have an account?",
-                                children: [
-                                  TextSpan(
-                                      text: " Sign_in",
-                                      style: TextStyle(
-                                          decoration: TextDecoration.underline,
-                                          fontSize: 15))
-                                ]),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Text.rich(
+                              TextSpan(
+                                  text: "Already have an account?",
+                                  children: [
+                                    TextSpan(
+                                        text: " Sign_in",
+                                        style: TextStyle(
+                                            decoration:
+                                                TextDecoration.underline,
+                                            fontSize: 15))
+                                  ]),
+                            ),
                           ),
                         ),
                       ],

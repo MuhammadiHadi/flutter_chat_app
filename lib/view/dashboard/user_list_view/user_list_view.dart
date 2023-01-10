@@ -1,6 +1,8 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_app/utils/route/route.dart';
+import 'package:flutter_chat_app/view/dashboard/message_view/message_view.dart';
 import 'package:flutter_chat_app/view_model/services/session_manger/session_manger.dart';
 
 class UserList extends StatefulWidget {
@@ -30,7 +32,15 @@ class _UserListState extends State<UserList> {
                       child: Card(
                         child: ListTile(
                           onTap: () {
-                            Navigator.pushNamed(context, '/message');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => MessageView(
+                                          name: snapshot
+                                              .child('username')
+                                              .value
+                                              .toString(),
+                                        )));
                           },
                           leading:
                               snapshot.child('profile').value.toString() == ''

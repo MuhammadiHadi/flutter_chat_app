@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
   String? title;
-  Color? color, textcolor;
+  Color? color, textcolor, borderColor;
   VoidCallback? onPress;
   bool loading;
+  double boador;
 
   MainButton(
       {this.color,
       this.title,
       this.loading = false,
       this.onPress,
-      this.textcolor});
+      this.textcolor,
+      this.borderColor,
+      required this.boador});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +25,7 @@ class MainButton extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           color: color,
+          border: Border.all(color: borderColor!, width: boador.toDouble()),
           borderRadius: BorderRadius.circular(20),
         ),
         child: loading

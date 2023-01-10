@@ -27,6 +27,7 @@ class _LoginViewState extends State<LoginView> {
       fontWeight: FontWeight.w900,
       fontSize: 23,
     );
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -36,20 +37,17 @@ class _LoginViewState extends State<LoginView> {
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 80),
-                  child: Text(
-                    "Welcome to Messaging",
-                    style: style,
-                  ),
+                  child: Text("Welcome!", style: style),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Text(
-                  "Enter your email address\n to connect your account",
+                  "Sign in to Continue",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
@@ -110,6 +108,8 @@ class _LoginViewState extends State<LoginView> {
                   child: Consumer<LoginConttroller>(
                     builder: (context, provider, child) {
                       return MainButton(
+                        boador: 0.0,
+                        borderColor: AppColor.greenboarder,
                         title: "LOGIN",
                         color: AppColor.green,
                         textcolor: AppColor.white,
@@ -131,18 +131,26 @@ class _LoginViewState extends State<LoginView> {
                   onTap: () {
                     Navigator.pushNamed(context, '/signup');
                   },
-                  child: Text.rich(
-                    TextSpan(text: "Don't have an account?", children: [
-                      TextSpan(
-                          text: " SignUp",
-                          style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              fontSize: 15))
-                    ]),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text.rich(
+                      TextSpan(text: "Don't have an account?", children: [
+                        TextSpan(
+                            text: " SignUp",
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontSize: 15))
+                      ]),
+                    ),
                   ),
                 ),
+                SizedBox(
+                  height: 30,
+                ),
                 MainButton(
-                  title: "Login with GOOGLE",
+                  boador: 0.8,
+                  borderColor: AppColor.greenboarder,
+                  title: "LOGIN WITH GOOGLE",
                   color: Colors.white,
                 )
               ],
